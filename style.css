@@ -101,6 +101,13 @@ body {
     gap: 10px;
 }
 
+.func-row {
+    display: flex;
+    justify-content: space-between;
+    gap: 8px;
+    margin-bottom: 12px;
+}
+
 button {
     background: #e5f0ff;
     border: none;
@@ -154,6 +161,18 @@ button:active {
 
 .zero {
     grid-column: span 2;
+}
+
+.func {
+    background: #e0f2fe;
+    color: #0f172a;
+    font-size: 14px;
+    padding: 8px 10px;
+    flex: 1;
+}
+
+.func:hover {
+    background: #dbeafe;
 }
 
 .backspace {
