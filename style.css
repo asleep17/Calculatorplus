@@ -6,7 +6,7 @@
 
 body {
     font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-    background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+    background: radial-gradient(circle at top, #e0f2fe 0, #e5e7eb 45%, #e5e7eb 100%);
     min-height: 100vh;
     display: flex;
     align-items: center;
@@ -15,27 +15,69 @@ body {
 }
 
 .calculator {
-    background: #020617;
-    border-radius: 20px;
-    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
-    padding: 24px;
+    background: #f9fafb;
+    border-radius: 16px;
+    box-shadow: 0 18px 40px rgba(15, 23, 42, 0.15);
+    padding: 20px 20px 24px;
     width: 100%;
     max-width: 400px;
 }
 
+.calc-header {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    margin-bottom: 16px;
+    color: #6b7280;
+    font-size: 10px;
+    text-transform: uppercase;
+    letter-spacing: 0.15em;
+}
+
+.calc-header .brand {
+    font-weight: 600;
+}
+
+.calc-header .model {
+    font-weight: 500;
+    color: #9ca3af;
+}
+
+.mode-indicators {
+    display: flex;
+    gap: 6px;
+    margin-top: 4px;
+}
+
+.mode-indicators .mode {
+    padding: 2px 8px;
+    border-radius: 999px;
+    border: 1px solid #d1d5db;
+    font-size: 10px;
+    text-transform: uppercase;
+    color: #6b7280;
+}
+
+.mode-indicators .mode.active {
+    background: #60a5fa;
+    color: #0b1120;
+    border-color: #60a5fa;
+}
+
 .display {
-    background: #0f172a;
+    background: #e5f0ff;
     border-radius: 12px;
-    padding: 20px;
-    margin-bottom: 24px;
+    padding: 16px;
+    margin-bottom: 20px;
     min-height: 120px;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+    border: 1px solid #cbd5f5;
 }
 
 .expression {
-    color: #94a3b8;
+    color: #64748b;
     font-size: 20px;
     font-family: 'Courier New', monospace;
     text-align: right;
@@ -45,7 +87,7 @@ body {
 }
 
 .result {
-    color: white;
+    color: #0f172a;
     font-size: 36px;
     font-weight: bold;
     font-family: 'Courier New', monospace;
@@ -56,54 +98,58 @@ body {
 .buttons {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
-    gap: 12px;
+    gap: 10px;
 }
 
 button {
-    background: #334155;
+    background: #e5f0ff;
     border: none;
-    border-radius: 12px;
-    color: white;
-    font-size: 20px;
-    font-weight: 600;
-    padding: 20px;
+    border-radius: 10px;
+    color: #0f172a;
+    font-size: 18px;
+    font-weight: 500;
+    padding: 16px;
     cursor: pointer;
-    transition: all 0.2s;
+    transition: background 0.15s, transform 0.05s, box-shadow 0.15s;
+    box-shadow: 0 1px 2px rgba(15, 23, 42, 0.04);
 }
 
 button:hover {
-    background: #475569;
-    transform: translateY(-2px);
+    background: #dbeafe;
 }
 
 button:active {
-    transform: translateY(0);
+    transform: translateY(1px);
+    box-shadow: none;
 }
 
 .clear {
-    background: #dc2626;
+    background: #fee2e2;
     grid-column: span 2;
+    color: #b91c1c;
 }
 
 .clear:hover {
-    background: #b91c1c;
+    background: #fecaca;
 }
 
 .operator {
-    background: #ea580c;
+    background: #e5e7eb;
+    color: #6b7280;
 }
 
 .operator:hover {
-    background: #c2410c;
+    background: #d1d5db;
 }
 
 .equals {
-    background: #16a34a;
+    background: #3b82f6;
     grid-column: span 2;
+    color: #eff6ff;
 }
 
 .equals:hover {
-    background: #15803d;
+    background: #2563eb;
 }
 
 .zero {
@@ -111,9 +157,10 @@ button:active {
 }
 
 .backspace {
-    background: #334155;
+    background: #e5e7eb;
+    color: #6b7280;
 }
 
 .backspace:hover {
-    background: #475569;
+    background: #d1d5db;
 }
